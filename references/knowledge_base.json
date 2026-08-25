@@ -1,0 +1,122 @@
+{
+  "meta": {
+    "titolo": "Knowledge Base Scientifica per Schede Palestra",
+    "fonti": [
+      "Delavier F. - Strength Training Anatomy (3rd ed.)",
+      "Schoenfeld B. - Science and Development of Muscle Hypertrophy",
+      "Helms E. et al. - The Muscle and Strength Pyramid: Training",
+      "Haff G.G. / NSCA - Essentials of Strength Training and Conditioning"
+    ],
+    "nota": "Selezionare esercizi SOLO da questo file. Se un esercizio richiesto dall'utente non e' presente, segnalarlo esplicitamente invece di inventarlo."
+  },
+
+  "principi": {
+    "helms_pyramid": [
+      "1. Aderenza: programma sostenibile e realistico prima di tutto.",
+      "2. Volume / Intensita' / Frequenza: 10-20 serie dure per gruppo muscolare a settimana (MEV-MAV-MRV).",
+      "3. Progressione: modello adatto al livello (novizio=lineare, intermedio=doppia progressione/wave, avanzato=block periodization autoregolato).",
+      "4. Selezione esercizi: multiarticolari come base + isolamento per capi muscolari regionali.",
+      "5. Recuperi: 2-4 min su multiarticolari pesanti, 60-120s su isolamento.",
+      "6. Tempo di esecuzione: secondario, 0.5-6s per ripetizione produce ipertrofia equivalente vicino al cedimento."
+    ],
+    "rir_rpe_scale": {
+      "10_RPE": "0 RIR - cedimento assoluto",
+      "9_RPE": "1 RIR",
+      "8_RPE": "2 RIR",
+      "7_RPE": "3 RIR - riscaldamento/tecnica",
+      "target_ipertrofia": "1-3 RIR nella maggior parte delle serie, 0-1 RIR nell'ultima settimana pre-deload",
+      "target_forza_heavy": "1-2 RIR sui fondamentali, mai cedimento tecnico su squat/panca/stacco/OHP"
+    },
+    "volume_settimanale_per_gruppo": {
+      "basso": "<10 serie/settimana (novizi o mantenimento)",
+      "ottimale": "10-20 serie/settimana (intermedio/avanzato)",
+      "nota": "oltre il MRV (massimo volume recuperabile) il ritorno e' negativo per fatica sistemica"
+    },
+    "frequenza": {
+      "principianti": "2-3 sedute full body/settimana",
+      "intermedio_avanzato": "2x/settimana per gruppo muscolare (upper/lower, PPL, split specializzati)"
+    },
+    "recuperi_per_categoria": {
+      "multiarticolare_heavy": "2.5-4 min",
+      "multiarticolare_hyper": "2-2.5 min",
+      "isolamento": "60-120 sec"
+    },
+    "tempo_esecuzione": {
+      "concentrica": "1-2s (esplosiva, intenzione di velocita')",
+      "eccentrica": "2-3s (controllata, mantiene tensione meccanica)",
+      "nota": "formato notazione: Eccentrica-Pausa_basso-Concentrica-Pausa_alto (es. 2-0-X-0, X=esplosiva)"
+    },
+    "progressione": {
+      "novizio": "Progressione lineare: +1-2.5kg a sessione mantenendo il range di reps target.",
+      "intermedio": "Doppia progressione: fissa il carico, sali di reps fino al limite superiore del range, poi aumenta il carico e riparti dal limite inferiore. In alternativa wave/periodizzazione a 3-4 settimane.",
+      "avanzato": "Block periodization autoregolato su RIR/velocity loss, con fasi di accumulo/intensificazione/peak.",
+      "deload": "Ogni 5-6 settimane: dimezzare le serie totali e usare RIR 3-4 per una settimana."
+    },
+    "controindicazioni_generali": {
+      "lombare": "evitare stacchi/squat heavy senza tecnica validata; preferire leg press, hip thrust, RDL con manubri leggeri, macchine guidate.",
+      "ginocchio": "evitare squat profondo/affondi heavy e leg extension pesante; preferire leg press con ROM limitato, hip thrust, adductor/abductor machine.",
+      "spalla": "evitare lento avanti dietro la nuca, dip profondi, panca con arco eccessivo; preferire spinte con manubri in traiettoria neutra, cavi, landmine press.",
+      "gomito_polso": "evitare curl con bilanciere dritto pesante e French press; preferire curl con manubri/EZ bar, pushdown con corda."
+    }
+  },
+
+  "riscaldamento_pool": [
+    {"id": "wu_cardio", "nome": "Cardio leggero (bike/tapis roulant/cyclette)", "durata": "5-8 min", "note": "innalza temperatura corporea e frequenza cardiaca, non sostituisce le serie di avvicinamento"},
+    {"id": "wu_mobilita_anca_spalla", "nome": "Mobilita' articolare anca-spalla-caviglia", "durata": "3-5 min", "note": "circonduzioni, leg swing, dislocate con elastico"},
+    {"id": "wu_attivazione_glutei", "nome": "Attivazione glutei/core (band walk, plank breve)", "durata": "2-3 min", "note": "utile prima di giornate lower/gambe"},
+    {"id": "wu_ramping", "nome": "Serie di avvicinamento (ramping) sul primo esercizio principale", "durata": "3-4 serie crescenti", "note": "es. target 4x4@140kg -> 1x8@60kg, 1x5@90kg, 1x3@115kg, 1x1@130kg; non contano nel volume allenante"}
+  ],
+
+  "defaticamento_pool": [
+    {"id": "cd_stretch_pett", "nome": "Stretching statico pettorali (doorway stretch)", "durata": "2x30s"},
+    {"id": "cd_stretch_dorso", "nome": "Stretching statico dorso (child pose / cat-cow)", "durata": "2x30s"},
+    {"id": "cd_stretch_femorali", "nome": "Stretching statico ischiocrurali (forward fold)", "durata": "2x30s"},
+    {"id": "cd_stretch_quad", "nome": "Stretching statico quadricipiti (standing quad stretch)", "durata": "2x30s"},
+    {"id": "cd_respirazione", "nome": "Respirazione diaframmatica / decompressione lombare", "durata": "2-3 min"}
+  ],
+
+  "esercizi": [
+    {"id": "back_squat", "nome": "Squat con Bilanciere (Back Squat)", "gruppo_muscolare": "Gambe", "target": "Quadricipiti, Grande Gluteo, Erettori Spinali", "categoria": "multiarticolare", "tag_intensita": "HEAVY", "attrezzatura": ["bilanciere", "rack"], "serie": [3,5], "ripetizioni": "3-5", "rir": "1-2", "recupero": "3.0-4.0 min", "tempo": "2-0-X-0", "note_tecniche": "Fermo al parallelo, evitare valgismo dinamico del ginocchio.", "controindicazioni": ["ginocchio", "lombare"], "search_term": "Back Squat esecuzione", "fonte": "Delavier pp.126-128"},
+    {"id": "hack_squat", "nome": "Hack Squat o Leg Press 45°", "gruppo_muscolare": "Gambe", "target": "Quadricipiti (vasto laterale e mediale)", "categoria": "multiarticolare", "tag_intensita": "HYPER", "attrezzatura": ["macchina"], "serie": [3,4], "ripetizioni": "6-8", "rir": "1", "recupero": "2.5 min", "tempo": "3-0-1-0", "note_tecniche": "ROM completo senza scollare la zona lombare dallo schienale.", "controindicazioni": [], "search_term": "Hack squat leg press", "fonte": "Delavier p.130"},
+    {"id": "leg_press_rom_limitato", "nome": "Leg Press 45° (ROM limitato)", "gruppo_muscolare": "Gambe", "target": "Quadricipiti", "categoria": "multiarticolare", "tag_intensita": "HYPER", "attrezzatura": ["macchina"], "serie": [3,4], "ripetizioni": "8-12", "rir": "1-2", "recupero": "2 min", "tempo": "2-0-1-0", "note_tecniche": "Alternativa a basso impatto sul ginocchio rispetto a squat/affondi.", "controindicazioni": [], "search_term": "Leg press 45 gradi", "fonte": "Delavier p.132"},
+    {"id": "affondi_manubri", "nome": "Affondi con Manubri (Lunges)", "gruppo_muscolare": "Gambe", "target": "Quadricipiti, Grande Gluteo, stabilizzatori", "categoria": "multiarticolare", "tag_intensita": "HYPER", "attrezzatura": ["manubri", "corpo libero"], "serie": [3,3], "ripetizioni": "8-10 per gamba", "rir": "1-2", "recupero": "2 min", "tempo": "2-0-1-0", "note_tecniche": "Ginocchio anteriore in linea con la caviglia, busto eretto.", "controindicazioni": ["ginocchio"], "search_term": "Affondi manubri lunges", "fonte": "Delavier p.134"},
+    {"id": "stacco_rumeno", "nome": "Stacco Rumeno con Bilanciere/Manubri (RDL)", "gruppo_muscolare": "Gambe", "target": "Ischiocrurali (allungamento), Grande Gluteo", "categoria": "multiarticolare", "tag_intensita": "HYPER", "attrezzatura": ["bilanciere", "manubri"], "serie": [3,3], "ripetizioni": "8-10", "rir": "1-2", "recupero": "2 min", "tempo": "3-1-1-0", "note_tecniche": "Massimo allungamento ischiocrurali mantenendo colonna lombare neutra.", "controindicazioni": ["lombare"], "search_term": "Stacco Rumeno RDL", "fonte": "Delavier p.140"},
+    {"id": "leg_curl", "nome": "Leg Curl (sdraiato o seduto)", "gruppo_muscolare": "Gambe", "target": "Ischiocrurali (isolamento)", "categoria": "isolamento", "tag_intensita": "ISO", "attrezzatura": ["macchina"], "serie": [3,3], "ripetizioni": "10-12", "rir": "0-1", "recupero": "90 sec", "tempo": "2-0-1-1", "note_tecniche": "Evitare di staccare il bacino dalla panca a fine range.", "controindicazioni": [], "search_term": "Leg curl macchina", "fonte": "Delavier p.144"},
+    {"id": "hip_thrust", "nome": "Hip Thrust con Bilanciere", "gruppo_muscolare": "Gambe", "target": "Grande Gluteo", "categoria": "multiarticolare", "tag_intensita": "HYPER", "attrezzatura": ["bilanciere", "panca"], "serie": [3,3], "ripetizioni": "8-12", "rir": "1", "recupero": "2 min", "tempo": "2-1-1-0", "note_tecniche": "Alternativa a basso stress lombare per il gluteo rispetto allo stacco.", "controindicazioni": [], "search_term": "Hip thrust bilanciere", "fonte": "Delavier p.160"},
+    {"id": "calf_raise", "nome": "Calf Raise in Piedi o Seduto", "gruppo_muscolare": "Gambe", "target": "Gastrocnemio, Soleo", "categoria": "isolamento", "tag_intensita": "ISO", "attrezzatura": ["macchina", "manubri"], "serie": [3,4], "ripetizioni": "10-15", "rir": "0-1", "recupero": "60-90 sec", "tempo": "1-1-1-1", "note_tecniche": "Massima estensione in alto, stretch completo in basso.", "controindicazioni": [], "search_term": "Calf raise polpacci", "fonte": "Delavier p.150"},
+
+    {"id": "bench_press", "nome": "Panca Piana con Bilanciere (Bench Press)", "gruppo_muscolare": "Petto", "target": "Pettorale Sternocostale, Deltoide Anteriore, Tricipiti", "categoria": "multiarticolare", "tag_intensita": "HEAVY", "attrezzatura": ["bilanciere", "panca"], "serie": [3,5], "ripetizioni": "3-5", "rir": "1-2", "recupero": "3.0 min", "tempo": "2-1-X-0", "note_tecniche": "Fermo 1s al petto, scapole addotte per proteggere la cuffia dei rotatori.", "controindicazioni": ["spalla"], "search_term": "Bench Press panca piana", "fonte": "Delavier p.66"},
+    {"id": "panca_inclinata", "nome": "Panca Inclinata Bilanciere/Manubri (30-45°)", "gruppo_muscolare": "Petto", "target": "Pettorale Clavicolare (alto)", "categoria": "multiarticolare", "tag_intensita": "HYPER", "attrezzatura": ["bilanciere", "manubri", "panca"], "serie": [3,3], "ripetizioni": "8-10", "rir": "1", "recupero": "2 min", "tempo": "2-0-1-0", "note_tecniche": "Inclinazione 30-45° enfatizza il capo clavicolare (Delavier).", "controindicazioni": ["spalla"], "search_term": "Panca inclinata manubri", "fonte": "Delavier p.64"},
+    {"id": "dip_parallele", "nome": "Dip alle Parallele / Spinta Manubri Inclinata Negativa", "gruppo_muscolare": "Petto", "target": "Pettorale Clavicolare/Inferiore, Tricipiti", "categoria": "multiarticolare", "tag_intensita": "HYPER", "attrezzatura": ["corpo libero", "manubri", "panca"], "serie": [3,3], "ripetizioni": "8-10", "rir": "1", "recupero": "2 min", "tempo": "2-0-1-0", "note_tecniche": "Evitare discesa eccessiva se storia di instabilita' di spalla.", "controindicazioni": ["spalla"], "search_term": "Dip parallele petto", "fonte": "Delavier p.68"},
+    {"id": "croci_cavi", "nome": "Croci ai Cavi Inclinati / Chest Press Machine", "gruppo_muscolare": "Petto", "target": "Grande Pettorale (tensione in allungamento)", "categoria": "isolamento", "tag_intensita": "HYPER", "attrezzatura": ["cavi", "macchina"], "serie": [3,3], "ripetizioni": "8-10", "rir": "1", "recupero": "90 sec", "tempo": "3-0-1-0", "note_tecniche": "Enfasi sull'allungamento a braccia aperte prima della concentrica.", "controindicazioni": [], "search_term": "Croci cavi inclinati", "fonte": "Delavier p.72"},
+    {"id": "chest_press_macchina", "nome": "Chest Press Machine (traiettoria neutra)", "gruppo_muscolare": "Petto", "target": "Pettorale, Deltoide Anteriore, Tricipiti", "categoria": "multiarticolare", "tag_intensita": "HYPER", "attrezzatura": ["macchina"], "serie": [3,4], "ripetizioni": "8-12", "rir": "1-2", "recupero": "2 min", "tempo": "2-0-1-0", "note_tecniche": "Alternativa a basso stress di spalla rispetto alla panca con bilanciere.", "controindicazioni": [], "search_term": "Chest press machine", "fonte": "Delavier p.70"},
+    {"id": "pushup", "nome": "Piegamenti sulle Braccia (Push-up)", "gruppo_muscolare": "Petto", "target": "Pettorale, Tricipiti, Core", "categoria": "multiarticolare", "tag_intensita": "HYPER", "attrezzatura": ["corpo libero"], "serie": [3,4], "ripetizioni": "10-15", "rir": "1-2", "recupero": "90 sec", "tempo": "2-0-1-0", "note_tecniche": "Utile per full body senza attrezzatura o come finisher.", "controindicazioni": [], "search_term": "Push up piegamenti", "fonte": "Delavier p.74"},
+
+    {"id": "trazioni", "nome": "Trazioni alla Sbarra / Lat Machine Inversa", "gruppo_muscolare": "Dorso", "target": "Gran Dorsale (fibre verticali), Bicipiti", "categoria": "multiarticolare", "tag_intensita": "HYPER", "attrezzatura": ["corpo libero", "macchina"], "serie": [3,3], "ripetizioni": "6-8", "rir": "1", "recupero": "2.0-2.5 min", "tempo": "3-0-1-0", "note_tecniche": "Presa larga enfatizza dorsale superiore/esterno.", "controindicazioni": [], "search_term": "Trazioni sbarra lat machine", "fonte": "Delavier p.86"},
+    {"id": "lat_machine_presa_stretta", "nome": "Lat Machine Presa Stretta/Supina", "gruppo_muscolare": "Dorso", "target": "Gran Dorsale (fibre inferiori), Bicipiti", "categoria": "multiarticolare", "tag_intensita": "HYPER", "attrezzatura": ["macchina", "cavi"], "serie": [3,3], "ripetizioni": "8-10", "rir": "1", "recupero": "2 min", "tempo": "2-0-1-0", "note_tecniche": "Presa stretta/supina enfatizza dorsale inferiore (Delavier p.88).", "controindicazioni": [], "search_term": "Lat machine presa stretta", "fonte": "Delavier p.88"},
+    {"id": "stacco_terra", "nome": "Stacco da Terra (Conventional / Trap Bar)", "gruppo_muscolare": "Dorso", "target": "Catena Posteriore Totale, Glutei, Erettori Spinali", "categoria": "multiarticolare", "tag_intensita": "HEAVY", "attrezzatura": ["bilanciere", "trap bar"], "serie": [3,5], "ripetizioni": "3-5", "rir": "1-2", "recupero": "3.5-4.0 min", "tempo": "1-1-X-0", "note_tecniche": "Settare il bacino prima del pull, evitare flessione lombare sotto carico.", "controindicazioni": ["lombare"], "search_term": "Stacco da terra convenzionale trap bar", "fonte": "Delavier p.140"},
+    {"id": "rematore_bilanciere", "nome": "Rematore con Bilanciere / T-Bar Row", "gruppo_muscolare": "Dorso", "target": "Centro Schiena, Trapezio Medio/Inferiore, Romboidi", "categoria": "multiarticolare", "tag_intensita": "HYPER", "attrezzatura": ["bilanciere", "t-bar"], "serie": [3,3], "ripetizioni": "6-8", "rir": "1-2", "recupero": "2 min", "tempo": "2-1-1-0", "note_tecniche": "Busto stabile, tirare con i gomiti non con le braccia.", "controindicazioni": ["lombare"], "search_term": "Rematore bilanciere T-bar row", "fonte": "Delavier p.104"},
+    {"id": "rematore_manubrio", "nome": "Rematore con Manubrio su Panca (One-Arm Row)", "gruppo_muscolare": "Dorso", "target": "Gran Dorsale, Centro Schiena", "categoria": "multiarticolare", "tag_intensita": "HYPER", "attrezzatura": ["manubri", "panca"], "serie": [3,3], "ripetizioni": "8-10 per lato", "rir": "1", "recupero": "90 sec", "tempo": "2-0-1-0", "note_tecniche": "Buon compromesso a basso stress lombare rispetto al rematore bilanciere.", "controindicazioni": [], "search_term": "Rematore manubrio panca", "fonte": "Delavier p.106"},
+    {"id": "face_pull", "nome": "Face Pull ai Cavi", "gruppo_muscolare": "Dorso", "target": "Deltoide Posteriore, Rotatori Esterni, Cuffia", "categoria": "isolamento", "tag_intensita": "ISO", "attrezzatura": ["cavi"], "serie": [3,3], "ripetizioni": "10-12", "rir": "1", "recupero": "90 sec", "tempo": "2-1-1-1", "note_tecniche": "Gomiti alti, extrarotazione finale per salute della spalla.", "controindicazioni": [], "search_term": "Face pull cavi", "fonte": "Delavier p.44"},
+    {"id": "shrug", "nome": "Shrug con Bilanciere/Manubri", "gruppo_muscolare": "Dorso", "target": "Trapezio Superiore", "categoria": "isolamento", "tag_intensita": "ISO", "attrezzatura": ["bilanciere", "manubri"], "serie": [3,3], "ripetizioni": "10-12", "rir": "1", "recupero": "90 sec", "tempo": "2-1-1-0", "note_tecniche": "Elevazione pura, evitare rotazione delle spalle.", "controindicazioni": [], "search_term": "Shrug trapezio", "fonte": "Delavier p.92"},
+
+    {"id": "ohp", "nome": "Lento Avanti (Overhead Press) / Incline Press", "gruppo_muscolare": "Spalle", "target": "Deltoide Anteriore, Pettorale Alto, Tricipiti", "categoria": "multiarticolare", "tag_intensita": "HEAVY", "attrezzatura": ["bilanciere", "manubri"], "serie": [3,4], "ripetizioni": "4-6", "rir": "1-2", "recupero": "3.0 min", "tempo": "2-0-X-0", "note_tecniche": "Traiettoria verticale, evitare eccessiva inarcatura lombare.", "controindicazioni": ["spalla", "lombare"], "search_term": "Lento avanti overhead press", "fonte": "Delavier p.36"},
+    {"id": "alzate_laterali", "nome": "Alzate Laterali ai Cavi o Manubri", "gruppo_muscolare": "Spalle", "target": "Deltoide Laterale (isolamento)", "categoria": "isolamento", "tag_intensita": "ISO", "attrezzatura": ["manubri", "cavi"], "serie": [3,3], "ripetizioni": "10-12", "rir": "0-1", "recupero": "90 sec", "tempo": "2-0-1-1", "note_tecniche": "Leggera flessione del gomito, non superare l'altezza della spalla se instabilita' presente.", "controindicazioni": ["spalla"], "search_term": "Alzate laterali manubri cavi", "fonte": "Delavier p.40"},
+    {"id": "alzate_posteriori", "nome": "Alzate Posteriori (Reverse Fly) Manubri/Cavi", "gruppo_muscolare": "Spalle", "target": "Deltoide Posteriore", "categoria": "isolamento", "tag_intensita": "ISO", "attrezzatura": ["manubri", "cavi"], "serie": [3,3], "ripetizioni": "10-12", "rir": "0-1", "recupero": "90 sec", "tempo": "2-0-1-1", "note_tecniche": "Busto inclinato avanti, movimento ad arco largo.", "controindicazioni": [], "search_term": "Alzate posteriori reverse fly", "fonte": "Delavier p.46"},
+    {"id": "landmine_press", "nome": "Landmine Press (spinta con bilanciere ancorato)", "gruppo_muscolare": "Spalle", "target": "Deltoide Anteriore, Pettorale Alto", "categoria": "multiarticolare", "tag_intensita": "HYPER", "attrezzatura": ["bilanciere", "landmine"], "serie": [3,3], "ripetizioni": "8-10", "rir": "1", "recupero": "2 min", "tempo": "2-0-1-0", "note_tecniche": "Traiettoria angolata a basso stress per spalle sensibili.", "controindicazioni": [], "search_term": "Landmine press spalle", "fonte": "Delavier p.38"},
+    {"id": "arnold_press", "nome": "Arnold Press con Manubri", "gruppo_muscolare": "Spalle", "target": "Deltoide Anteriore e Laterale", "categoria": "multiarticolare", "tag_intensita": "HYPER", "attrezzatura": ["manubri"], "serie": [3,3], "ripetizioni": "8-10", "rir": "1", "recupero": "2 min", "tempo": "2-0-1-0", "note_tecniche": "Rotazione del polso in salita per coinvolgere piu' fasci deltoidei.", "controindicazioni": ["spalla"], "search_term": "Arnold press manubri", "fonte": "Delavier p.42"},
+
+    {"id": "curl_bilanciere", "nome": "Curl Bilanciere EZ / Manubri su Panca 45°", "gruppo_muscolare": "Braccia (Bicipiti)", "target": "Bicipite Brachiale (capo lungo in allungamento)", "categoria": "isolamento", "tag_intensita": "ISO", "attrezzatura": ["bilanciere", "manubri", "panca"], "serie": [3,3], "ripetizioni": "8-10", "rir": "0-1", "recupero": "90 sec", "tempo": "2-0-1-1", "note_tecniche": "Allungamento completo in fase eccentrica per il capo lungo.", "controindicazioni": ["gomito_polso"], "search_term": "Curl panca 45 bilanciere EZ", "fonte": "Delavier p.14"},
+    {"id": "curl_martello", "nome": "Curl a Martello (Hammer Curl)", "gruppo_muscolare": "Braccia (Bicipiti)", "target": "Brachiale, Brachioradiale", "categoria": "isolamento", "tag_intensita": "ISO", "attrezzatura": ["manubri"], "serie": [3,3], "ripetizioni": "10-12", "rir": "0-1", "recupero": "90 sec", "tempo": "2-0-1-1", "note_tecniche": "Presa neutra, utile per spessore del braccio.", "controindicazioni": [], "search_term": "Curl martello manubri", "fonte": "Delavier p.16"},
+    {"id": "curl_cavo", "nome": "Curl al Cavo Basso", "gruppo_muscolare": "Braccia (Bicipiti)", "target": "Bicipite Brachiale", "categoria": "isolamento", "tag_intensita": "ISO", "attrezzatura": ["cavi"], "serie": [3,3], "ripetizioni": "10-12", "rir": "0-1", "recupero": "60-90 sec", "tempo": "2-0-1-1", "note_tecniche": "Tensione costante lungo tutto il ROM grazie al cavo.", "controindicazioni": [], "search_term": "Curl cavo basso bicipiti", "fonte": "Delavier p.18"},
+
+    {"id": "pushdown_tricipiti", "nome": "Extension Tricipiti al Cavo (Pushdown)", "gruppo_muscolare": "Braccia (Tricipiti)", "target": "Tricipite (capo laterale e mediale)", "categoria": "isolamento", "tag_intensita": "ISO", "attrezzatura": ["cavi"], "serie": [3,3], "ripetizioni": "10-12", "rir": "0-1", "recupero": "90 sec", "tempo": "2-0-1-1", "note_tecniche": "Gomiti fissi lungo il busto, corda o barra dritta.", "controindicazioni": [], "search_term": "Pushdown tricipiti cavo", "fonte": "Delavier p.22"},
+    {"id": "french_press", "nome": "French Press Bilanciere EZ / Manubri", "gruppo_muscolare": "Braccia (Tricipiti)", "target": "Tricipite (capo lungo, in allungamento)", "categoria": "isolamento", "tag_intensita": "ISO", "attrezzatura": ["bilanciere", "manubri", "panca"], "serie": [3,3], "ripetizioni": "8-10", "rir": "0-1", "recupero": "90 sec", "tempo": "2-0-1-1", "note_tecniche": "Estensione overhead pone il capo lungo sotto stretch massimo.", "controindicazioni": ["gomito_polso"], "search_term": "French press tricipiti overhead", "fonte": "Delavier p.24"},
+    {"id": "dip_stretti_panca", "nome": "Dip su Panca (Bench Dip)", "gruppo_muscolare": "Braccia (Tricipiti)", "target": "Tricipite, Pettorale Inferiore", "categoria": "multiarticolare", "tag_intensita": "HYPER", "attrezzatura": ["panca", "corpo libero"], "serie": [3,3], "ripetizioni": "10-12", "rir": "1", "recupero": "90 sec", "tempo": "2-0-1-0", "note_tecniche": "Non scendere oltre il punto di comfort della spalla.", "controindicazioni": ["spalla"], "search_term": "Dip su panca bench dip", "fonte": "Delavier p.26"},
+
+    {"id": "plank", "nome": "Plank (Isometria Addominale)", "gruppo_muscolare": "Core", "target": "Retto Addominale, Trasverso, Obliqui (stabilizzazione)", "categoria": "isolamento", "tag_intensita": "ISO", "attrezzatura": ["corpo libero"], "serie": [3,3], "ripetizioni": "30-60 sec", "rir": "-", "recupero": "60 sec", "tempo": "isometrico", "note_tecniche": "Linea retta caviglia-bacino-spalla, non far cadere i fianchi.", "controindicazioni": [], "search_term": "Plank addominali", "fonte": "Delavier p.178"},
+    {"id": "crunch_cavo", "nome": "Crunch al Cavo Alto (in ginocchio)", "gruppo_muscolare": "Core", "target": "Retto Addominale", "categoria": "isolamento", "tag_intensita": "ISO", "attrezzatura": ["cavi"], "serie": [3,3], "ripetizioni": "12-15", "rir": "0-1", "recupero": "60 sec", "tempo": "2-0-1-1", "note_tecniche": "Flessione del busto, non tirare con le braccia.", "controindicazioni": [], "search_term": "Crunch cavo alto", "fonte": "Delavier p.182"},
+    {"id": "russian_twist", "nome": "Russian Twist con Disco/Manubrio", "gruppo_muscolare": "Core", "target": "Obliqui", "categoria": "isolamento", "tag_intensita": "ISO", "attrezzatura": ["disco", "manubri", "corpo libero"], "serie": [3,3], "ripetizioni": "12-15 per lato", "rir": "0-1", "recupero": "60 sec", "tempo": "controllato", "note_tecniche": "Rotazione dal busto, non dalle spalle; attenzione se storia di lombalgia.", "controindicazioni": ["lombare"], "search_term": "Russian twist obliqui", "fonte": "Delavier p.190"},
+    {"id": "hanging_leg_raise", "nome": "Leg Raise in Sospensione alla Sbarra", "gruppo_muscolare": "Core", "target": "Retto Addominale (porzione inferiore), Flessori dell'anca", "categoria": "isolamento", "tag_intensita": "ISO", "attrezzatura": ["corpo libero", "sbarra"], "serie": [3,3], "ripetizioni": "10-15", "rir": "0-1", "recupero": "60-90 sec", "tempo": "controllato", "note_tecniche": "Retroversione del bacino a fine range, evitare lo swing.", "controindicazioni": [], "search_term": "Leg raise sbarra addominali", "fonte": "Delavier p.186"}
+  ]
+}

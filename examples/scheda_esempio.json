@@ -1,0 +1,49 @@
+{
+  "titolo_programma": "PROGRAMMA UPPER/LOWER - IPERTROFIA INTERMEDIO",
+  "sottotitolo": "Protocollo 4x/settimana basato su Helms Training Pyramid & Schoenfeld Hypertrophy Science",
+  "utente": "Mario Rossi",
+  "obiettivo": "Ipertrofia",
+  "livello": "Intermedio",
+  "data": "2026-08-25",
+  "settimana": "Settimana 3 / Mesociclo 1",
+  "riscaldamento": [
+    "5-8 min cardio leggero (bike o tapis roulant)",
+    "Mobilita' articolare anca-spalla-caviglia (3-5 min)",
+    "2 serie di avvicinamento crescenti sul primo esercizio principale (60-80% del carico target)"
+  ],
+  "giorni": [
+    {
+      "titolo": "Giorno A - Upper Body (Petto/Dorso/Spalle Heavy)",
+      "esercizi": [
+        {"nome": "Panca Piana con Bilanciere (Bench Press)", "target": "Pettorale Sternocostale, Deltoide Anteriore, Tricipiti", "tipo": "HEAVY", "serie": 4, "ripetizioni": "3-5", "rir": "1-2 RIR (RPE 8-9)", "recupero": "3.0 min", "tempo": "2-1-X-0", "note": "Fermo 1s al petto, scapole addotte.", "search_term": "Bench Press panca piana"},
+        {"nome": "Trazioni alla Sbarra / Lat Machine Inversa", "target": "Gran Dorsale (fibre verticali), Bicipiti", "tipo": "HYPER", "serie": 3, "ripetizioni": "6-8", "rir": "1 RIR (RPE 9)", "recupero": "2.0-2.5 min", "tempo": "3-0-1-0", "note": "Presa larga per dorsale superiore/esterno.", "search_term": "Trazioni sbarra lat machine"},
+        {"nome": "Lento Avanti (Overhead Press) / Incline Press", "target": "Deltoide Anteriore, Pettorale Alto, Tricipiti", "tipo": "HEAVY", "serie": 3, "ripetizioni": "4-6", "rir": "1-2 RIR (RPE 8-9)", "recupero": "3.0 min", "tempo": "2-0-X-0", "note": "Traiettoria verticale, no inarcatura lombare eccessiva.", "search_term": "Lento avanti overhead press"},
+        {"nome": "Rematore con Manubrio su Panca (One-Arm Row)", "target": "Gran Dorsale, Centro Schiena", "tipo": "HYPER", "serie": 3, "ripetizioni": "8-10 per lato", "rir": "1 RIR", "recupero": "90 sec", "tempo": "2-0-1-0", "note": "Basso stress lombare.", "search_term": "Rematore manubrio panca"},
+        {"nome": "Alzate Laterali ai Cavi o Manubri", "target": "Deltoide Laterale (isolamento)", "tipo": "ISO", "serie": 3, "ripetizioni": "10-12", "rir": "0-1 RIR (RPE 9-10)", "recupero": "90 sec", "tempo": "2-0-1-1", "note": "Leggera flessione del gomito.", "search_term": "Alzate laterali manubri cavi"},
+        {"nome": "Curl Bilanciere EZ / Manubri su Panca 45°", "target": "Bicipite Brachiale (capo lungo)", "tipo": "ISO", "serie": 3, "ripetizioni": "8-10", "rir": "0-1 RIR", "recupero": "90 sec", "tempo": "2-0-1-1", "note": "Allungamento completo in eccentrica.", "search_term": "Curl panca 45 bilanciere EZ"},
+        {"nome": "Extension Tricipiti al Cavo (Pushdown)", "target": "Tricipite (capo laterale e mediale)", "tipo": "ISO", "serie": 3, "ripetizioni": "10-12", "rir": "0-1 RIR", "recupero": "90 sec", "tempo": "2-0-1-1", "note": "Gomiti fissi lungo il busto.", "search_term": "Pushdown tricipiti cavo"}
+      ],
+      "note": "Nella panca mantenere arco fisiologico con scapole addotte per proteggere la cuffia dei rotatori."
+    },
+    {
+      "titolo": "Giorno B - Lower Body (Gambe/Glutei Heavy)",
+      "esercizi": [
+        {"nome": "Squat con Bilanciere (Back Squat)", "target": "Quadricipiti, Grande Gluteo, Erettori Spinali", "tipo": "HEAVY", "serie": 4, "ripetizioni": "3-5", "rir": "1-2 RIR (RPE 8-9)", "recupero": "3.0-4.0 min", "tempo": "2-0-X-0", "note": "Fermo al parallelo, evitare valgismo del ginocchio.", "search_term": "Back Squat esecuzione"},
+        {"nome": "Stacco Rumeno con Bilanciere/Manubri (RDL)", "target": "Ischiocrurali (allungamento), Grande Gluteo", "tipo": "HYPER", "serie": 3, "ripetizioni": "8-10", "rir": "1-2 RIR (RPE 8)", "recupero": "2.0 min", "tempo": "3-1-1-0", "note": "Colonna lombare neutra.", "search_term": "Stacco Rumeno RDL"},
+        {"nome": "Hack Squat o Leg Press 45°", "target": "Quadricipiti (vasto laterale e mediale)", "tipo": "HYPER", "serie": 3, "ripetizioni": "6-8", "rir": "1 RIR (RPE 9)", "recupero": "2.5 min", "tempo": "3-0-1-0", "note": "ROM completo, schiena a contatto.", "search_term": "Hack squat leg press"},
+        {"nome": "Hip Thrust con Bilanciere", "target": "Grande Gluteo", "tipo": "HYPER", "serie": 3, "ripetizioni": "8-12", "rir": "1 RIR", "recupero": "2 min", "tempo": "2-1-1-0", "note": "Basso stress lombare rispetto allo stacco.", "search_term": "Hip thrust bilanciere"},
+        {"nome": "Leg Curl (sdraiato o seduto)", "target": "Ischiocrurali (isolamento)", "tipo": "ISO", "serie": 3, "ripetizioni": "10-12", "rir": "0-1 RIR", "recupero": "90 sec", "tempo": "2-0-1-1", "note": "Non staccare il bacino dalla panca.", "search_term": "Leg curl macchina"},
+        {"nome": "Calf Raise in Piedi o Seduto", "target": "Gastrocnemio, Soleo", "tipo": "ISO", "serie": 4, "ripetizioni": "10-15", "rir": "0-1 RIR", "recupero": "60-90 sec", "tempo": "1-1-1-1", "note": "Stretch completo in basso, massima estensione in alto.", "search_term": "Calf raise polpacci"},
+        {"nome": "Plank (Isometria Addominale)", "target": "Core (stabilizzazione)", "tipo": "ISO", "serie": 3, "ripetizioni": "30-60 sec", "rir": "-", "recupero": "60 sec", "tempo": "isometrico", "note": "Linea retta caviglia-bacino-spalla.", "search_term": "Plank addominali"}
+      ],
+      "note": "Nello squat settare il bacino ed evitare flessione lombare sotto carico pesante."
+    }
+  ],
+  "defaticamento": [
+    "Stretching statico pettorali 2x30s",
+    "Stretching statico ischiocrurali e quadricipiti 2x30s per gruppo",
+    "Respirazione diaframmatica / decompressione lombare 2-3 min"
+  ],
+  "note_sicurezza": "Interrompere immediatamente l'esercizio in caso di dolore acuto o pinzamento articolare. In presenza di infortuni pregressi (spalla, lombare, ginocchio) preferire le varianti a basso stress indicate nella knowledge base.",
+  "note_progressione": "Doppia progressione: a parita' di RIR target, sali di reps fino al limite superiore del range indicato; una volta raggiunto su tutte le serie, incrementa il carico (+2.5kg upper, +2.5/5kg lower) e riparti dal limite inferiore. Deload ogni 5-6 settimane (meta' serie, RIR 3-4)."
+}

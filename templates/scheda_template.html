@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>{{TITOLO_PROGRAMMA}}</title>
+<style>
+    @page { size: A4 portrait; margin: 12mm; }
+    body { font-family: 'Inter', system-ui, -apple-system, sans-serif; color: #1e293b; margin: 0; font-size: 9.5pt; line-height: 1.4; }
+    .header { background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #312e81 100%); color: #fff; padding: 20px 24px; border-radius: 12px; margin-bottom: 16px; }
+    .header h1 { margin: 0 0 6px 0; font-size: 20pt; font-weight: 800; }
+    .header-subtitle { font-size: 11pt; color: #a5b4fc; font-weight: 600; margin-bottom: 10px; }
+    .header-meta { display: flex; gap: 16px; flex-wrap: wrap; font-size: 8.5pt; color: #cbd5e1; border-top: 1px solid rgba(255,255,255,.15); padding-top: 10px; margin-top: 10px; }
+    .header-meta strong { color: #fff; }
+    .section-title { font-size: 12pt; font-weight: 700; color: #0f172a; border-bottom: 2.5px solid #4f46e5; padding-bottom: 4px; margin-top: 18px; margin-bottom: 12px; }
+    .note-box { background: #f1f5f9; border-left: 3px solid #64748b; padding: 8px 12px; font-size: 8pt; color: #334155; margin-top: 6px; border-radius: 0 6px 6px 0; }
+    table.workout-table { width: 100%; border-collapse: collapse; margin-bottom: 16px; font-size: 8.5pt; border: 1px solid #e2e8f0; }
+    table.workout-table th { background-color: #1e1b4b; color: #fff; text-align: left; padding: 8px 10px; font-size: 8pt; text-transform: uppercase; }
+    table.workout-table td { padding: 8px 10px; border-bottom: 1px solid #f1f5f9; vertical-align: middle; }
+    table.workout-table tr:nth-child(even) { background-color: #f8fafc; }
+    .exercise-name { font-weight: 700; color: #0f172a; font-size: 9pt; }
+    .exercise-target { font-size: 7.5pt; color: #64748b; margin-top: 2px; }
+    .tag-heavy { background: #fee2e2; color: #991b1b; padding: 2px 6px; border-radius: 4px; font-size: 7.5pt; font-weight: 700; }
+    .tag-hyper { background: #e0e7ff; color: #3730a3; padding: 2px 6px; border-radius: 4px; font-size: 7.5pt; font-weight: 700; }
+    .tag-iso { background: #fef3c7; color: #92400e; padding: 2px 6px; border-radius: 4px; font-size: 7.5pt; font-weight: 700; }
+    .footer { margin-top: 20px; text-align: center; font-size: 7.5pt; color: #94a3b8; border-top: 1px solid #e2e8f0; padding-top: 8px; }
+    .page-break { page-break-before: always; }
+</style>
+</head>
+<body>
+
+<!--
+  TEMPLATE DI RIFERIMENTO per la scheda palestra.
+  Placeholder tra doppie parentesi {{ }} -> sostituire con i dati del programma
+  (stessa struttura del JSON in examples/scheda_esempio.json).
+  Il rendering effettivo del PDF e' delegato a scripts/generate_pdf.py (reportlab);
+  questo file serve come layout di riferimento / alternativa per un flusso HTML->PDF.
+-->
+
+<div class="header">
+    <h1>{{TITOLO_PROGRAMMA}}</h1>
+    <div class="header-subtitle">{{SOTTOTITOLO}}</div>
+    <div class="header-meta">
+        <div><strong>Atleta:</strong> {{UTENTE}}</div>
+        <div><strong>Obiettivo:</strong> {{OBIETTIVO}}</div>
+        <div><strong>Livello:</strong> {{LIVELLO}}</div>
+        <div><strong>Data:</strong> {{DATA}}</div>
+        <div><strong>{{SETTIMANA}}</strong></div>
+    </div>
+</div>
+
+<div class="section-title">Riscaldamento</div>
+<div class="note-box">{{LISTA_RISCALDAMENTO}}</div>
+
+<!-- Ripetere questo blocco per ogni giorno del programma -->
+<div class="section-title">{{TITOLO_GIORNO}}</div>
+<table class="workout-table">
+    <thead>
+        <tr>
+            <th>#</th><th>Esercizio &amp; Target</th><th>Tipo</th><th>Serie</th>
+            <th>Rip</th><th>RIR/RPE</th><th>Rest</th><th>Tempo</th><th>Note</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- una riga per esercizio -->
+        <tr>
+            <td>1</td>
+            <td>
+                <div class="exercise-name">{{NOME_ESERCIZIO}}</div>
+                <div class="exercise-target">{{TARGET_MUSCOLARE}}</div>
+            </td>
+            <td><span class="tag-heavy">{{TIPO}}</span></td>
+            <td>{{SERIE}}</td>
+            <td>{{RIPETIZIONI}}</td>
+            <td>{{RIR_RPE}}</td>
+            <td>{{RECUPERO}}</td>
+            <td>{{TEMPO}}</td>
+            <td>{{NOTE}}</td>
+        </tr>
+    </tbody>
+</table>
+<div class="note-box"><strong>Note tecniche:</strong> {{NOTE_GIORNO}}</div>
+<!-- fine blocco giorno -->
+
+<div class="page-break"></div>
+
+<div class="section-title">Defaticamento / Stretching</div>
+<div class="note-box">{{LISTA_DEFATICAMENTO}}</div>
+
+<div class="footer">
+    <strong>Note di sicurezza:</strong> {{NOTE_SICUREZZA}}<br/>
+    <strong>Progressione:</strong> {{NOTE_PROGRESSIONE}}
+</div>
+
+</body>
+</html>
