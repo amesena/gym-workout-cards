@@ -29,13 +29,13 @@ gym-workout-cards/
 Con [`npx skills`](https://github.com/vercel-labs/skills):
 
 ```bash
-npx skills add <owner>/gym-workout-cards
+npx skills add amesena/gym-workout-cards
 ```
 
 Per installarla solo su un agente specifico (es. Claude Code):
 
 ```bash
-npx skills add <owner>/gym-workout-cards -a claude-code
+npx skills add amesena/gym-workout-cards -a claude-code
 ```
 
 ### Dipendenze dello script
