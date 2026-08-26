@@ -33,8 +33,7 @@ Attiva questa skill quando l'utente chiede di:
   cambio split, infortunio da gestire).
 
 Non usarla per domande puramente teoriche sulla scienza dell'allenamento senza
-richiesta di output (in quel caso rispondi direttamente dalle pagine in
-`concepts/` del vault, se disponibili).
+richiesta di output: in quel caso rispondi direttamente, senza generare un PDF.
 
 ## Steps
 
@@ -58,8 +57,9 @@ richiesta di output (in quel caso rispondi direttamente dalle pagine in
    (specialmente infortuni/limitazioni, per motivi di sicurezza).
 
 2. **Leggi `references/knowledge_base.json`.** Contiene:
-   - `principi`: piramide di Helms, scala RIR/RPE, volume settimanale per
-     gruppo muscolare, frequenza, recuperi per categoria, tempo di esecuzione,
+   - `principi`: piramide delle priorita' di allenamento, scala RIR/RPE,
+     volume settimanale per gruppo muscolare, frequenza, recuperi per
+     categoria, tempo di esecuzione,
      modelli di progressione per livello, controindicazioni generali per zona
      infortunio.
    - `esercizi`: lista di esercizi con `gruppo_muscolare`, `target`,
@@ -68,6 +68,31 @@ richiesta di output (in quel caso rispondi direttamente dalle pagine in
      `recupero`, `tempo`, `note_tecniche`, `controindicazioni`, `search_term`.
    - `riscaldamento_pool` / `defaticamento_pool`: blocchi pronti per apertura
      e chiusura seduta.
+
+   **Approfondimento interno (opzionale).** `references/sources/concepts/`
+   contiene il razionale esteso dietro ogni regola della KB. Leggi il file
+   pertinente quando una decisione non e' meccanica — trade-off di volume,
+   scelta del modello di progressione, quanto avvicinarsi al cedimento,
+   gestione di un infortunio, split su vincoli di tempo/attrezzatura — o
+   quando l'utente chiede il *perche'* di una scelta. Mappa decisione → file:
+
+   | Decisione da prendere | File da leggere |
+   |---|---|
+   | Priorita' tra le variabili, cosa sacrificare | `helms-training-pyramid.md` |
+   | Serie/settimana per gruppo, MEV-MAV-MRV | `training-volume.md` |
+   | Quanti RIR assegnare, quando spingere a cedimento | `proximity-to-failure.md`, `rpe-and-rir-autoregulation.md` |
+   | Come distribuire i gruppi sui giorni, split | `training-frequency.md` |
+   | Modello di progressione per livello, deload | `progressive-overload-models.md` |
+   | Quali esercizi scegliere e in che ordine | `exercise-selection.md` |
+   | Perche' servono piu' esercizi per lo stesso muscolo | `regional-muscle-recruitment.md` |
+   | Recuperi tra le serie | `rest-intervals.md` |
+   | Notazione e rilevanza del tempo di esecuzione | `repetition-tempo.md` |
+   | Sostenibilita', durata sessione, vincoli reali | `adherence.md` |
+
+   Questi file servono a te per decidere meglio e per spiegare il razionale
+   con parole tue. Non aggiungono esercizi: la selezione resta vincolata a
+   `esercizi`. Ignora i wikilink `[[...]]` al loro interno (puntano a un vault
+   esterno, non risolvibili).
 
 3. **Seleziona esercizi SOLO da `esercizi`**, filtrando per:
    - attrezzatura disponibile (campo `attrezzatura`);
@@ -138,6 +163,30 @@ richiesta di output (in quel caso rispondi direttamente dalle pagine in
    applicata. Se ci sono stati esercizi non trovati in KB o gruppi muscolari
    sotto/sopra il volume raccomandato, segnalalo esplicitamente.
 
+## Regola sulle fonti (vincolante)
+
+Il materiale di riferimento e' a uso interno. Nell'output verso l'utente —
+messaggi in chat, note della scheda, contenuto del PDF — non nominare mai
+autori, libri, pagine, percorsi di file o campi bibliografici:
+
+- non citare `Delavier`, `Schoenfeld`, `Helms`, `Haff`, `NSCA`, i titoli dei
+  libri, ne' numeri di pagina;
+- non riportare `meta.fonti` ne' il campo `fonte` dei record esercizio, e non
+  copiarli in nessun campo del JSON del programma; anche i nomi delle chiavi
+  interne della KB (es. `helms_pyramid`) restano interni;
+- non nominare `references/sources/`, `knowledge_base.json` o altri percorsi
+  interni della skill (il percorso del PDF generato si comunica normalmente);
+- non usare formule del tipo "secondo la letteratura X" o "come indica il
+  manuale Y".
+
+Motiva sempre con il meccanismo, non con l'autorita'. Scrivi "recupero di 3
+minuti perche' sui multiarticolari pesanti serve il ripristino dei fosfati per
+non perdere carico nella serie successiva", non "3 minuti come da manuale Z".
+
+Se l'utente chiede esplicitamente le fonti: rispondi che la scheda si basa su
+letteratura consolidata di forza e ipertrofia senza dettagliare i riferimenti,
+e offri invece la spiegazione del meccanismo dietro la scelta.
+
 ## Gestione errori
 
 - **Input mancanti** (obiettivo, livello, giorni/settimana, attrezzatura): non
@@ -160,17 +209,22 @@ richiesta di output (in quel caso rispondi direttamente dalle pagine in
 ## File della skill
 
 - `references/knowledge_base.json` — knowledge base **strutturata** di
-  esercizi e regole (distillata da Delavier, Schoenfeld, Helms, NSCA). Unica
+  esercizi e regole (distillata da letteratura consolidata di forza e
+  ipertrofia). Unica
   fonte ammessa per la selezione esercizi e per compilare serie/rip/RIR/
   recupero/tempo/progressione.
-- `references/sources/` — testo originale delle pagine da cui è stata
-  distillata `knowledge_base.json` (concetti Helms/Schoenfeld su piramide,
-  volume, RIR/RPE, tempo, progressione, selezione esercizi, recupero,
-  frequenza, aderenza; profili degli autori; schede dei 4 libri fonte). Usa
-  questi file solo per citare/motivare una scelta con maggior dettaglio
-  all'utente — non contengono dati aggiuntivi di esercizi oltre a quelli già
-  in `knowledge_base.json`, e i wikilink `[[...]]` al loro interno puntano al
-  vault originale (non risolvibili fuori da esso, è un estratto).
+- `references/sources/` — **materiale di riferimento a uso interno**, mai da
+  citare o nominare all'utente (vedi "Regola sulle fonti").
+  - `concepts/` — razionale esteso dietro ogni regola della KB (piramide,
+    volume, RIR/RPE, tempo, progressione, selezione esercizi, reclutamento
+    regionale, recupero, frequenza, aderenza). Leggi il file pertinente
+    quando una scelta richiede un giudizio, non solo una lettura di campo:
+    serve a te per decidere e per spiegare il meccanismo con parole tue.
+  - `entities/` e `references/` — profili degli autori e schede dei libri.
+    Solo contesto: non usarli per comporre la scheda e non nominarli.
+  - Non contengono dati di esercizi oltre a quelli già in
+    `knowledge_base.json`; i wikilink `[[...]]` al loro interno puntano al
+    vault originale e non sono risolvibili qui.
 - `scripts/generate_pdf.py` — genera il PDF con reportlab a partire da un
   programma JSON; supporta `--selftest` per un check rapido di funzionamento.
 - `templates/scheda_template.html` — layout HTML di riferimento (stessa
